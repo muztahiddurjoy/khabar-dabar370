@@ -1,0 +1,224 @@
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.card-header {
+    background-color: #289A6A;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.card-body {
+    padding: 20px;
+}
+.info-row {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.info-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.info-label {
+    font-weight: bold;
+    width: 150px;
+    color: #555;
+}
+.info-value {
+    flex: 1;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th {
+    background-color: #289A6A;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: normal;
+}
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.status-completed {
+    color: #289A6A;
+    font-weight: bold;
+}
+.status-pending {
+    color: #ff9800;
+    font-weight: bold;
+}
+.status-cancelled {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+/* Feedback System Styles */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+    color: #777;
+}
+.tab.active {
+    color: #289A6A;
+    border-bottom-color: #289A6A;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.rating {
+    display: flex;
+    margin-right: 15px;
+    align-items: center;
+}
+.stars {
+    display: flex;
+    margin-right: 10px;
+}
+.star {
+    color: #ddd;
+    cursor: pointer;
+    font-size: 24px;
+}
+.star.filled {
+    color: #ffb800;
+}
+.rating-count {
+    color: #777;
+    font-size: 14px;
+}
+.feedback-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+.feedback-item:last-child {
+    border-bottom: none;
+}
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.feedback-food {
+    font-weight: bold;
+    font-size: 16px;
+}
+.feedback-date {
+    color: #777;
+    font-size: 14px;
+}
+.feedback-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.feedback-comment {
+    margin-top: 10px;
+    color: #555;
+}
+.add-feedback {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    min-height: 100px;
+    resize: vertical;
+}
+.btn {
+    background-color: #289A6A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn:hover {
+    background-color: #1f7d56;
+}
+
+/* Food Item Styles (for demonstration) */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.food-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.food-img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+.food-info {
+    padding: 15px;
+}
+.food-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.food-price {
+    color: #289A6A;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.food-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+}
