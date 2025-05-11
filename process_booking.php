@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$cart_data = json_decode($_POST['cart_data'], true);
+$cart_data = $_POST['cart_data'];
 $booking_date = $_POST['booking_date'];
 $booking_time = $_POST['booking_time'];
 $special_instructions = $_POST['special_instructions'] ?? '';
@@ -20,21 +20,16 @@ if (empty($cart_data)) {
 }
 
 try {
-    // Start transaction
-    $conn->begin_transaction();
     
-    foreach ($cart_data as $item) {
-        $item_id = $item['id'];
-        $quantity = $item['quantity'];
-        
-        $stmt = $conn->prepare("INSERT INTO advance_booking (user_id, food_item_id, quantity, booking_date, booking_time, special_instructions, booking_token) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("iiisssi", $user_id, $item_id, $quantity, $booking_date, $booking_time, $special_instructions, $booking_token);
-        $stmt->execute();
-        $stmt->close();
+    
+    $sql = "INSERT INTO advance_booking (user_id, booking_date, booking_time, special_request, booking_token,food_items) VALUES ('$user_id', '$booking_date', '$booking_time', '$special_instructions', '$booking_token' ,'$cart_data')";
+    $result = $conn->query($sql);
+    if (!$result) {
+        throw new Exception("Database error: " . $conn->error);
     }
     
-    // Commit transaction
-    $conn->commit();
+    
+    
     
     echo json_encode([
         'success' => true,
